@@ -20,12 +20,12 @@ module.exports = function(app) {
         }
     })
     app.put("/api/workouts/:id", ({body, params}, res) => {
-        // console.log(body, params)
+
         const workoutId = params.id;
         let savedExercises = [];
         Workout.find({_id: workoutId})
             .then(dbWorkout => {
-                // console.log(dbWorkout)
+
                 savedExercises = dbWorkout[0].exercises;
                 res.json(dbWorkout[0].exercises);
                 let allExercises = [...savedExercises, body]
