@@ -1,8 +1,6 @@
 // get all workout data from back-end
-console.log('here in line 2')
 fetch("/api/workouts/range")
   .then(response => {
-    console.log('this runs too')
     return response.json();
   })
   .then(data => {
